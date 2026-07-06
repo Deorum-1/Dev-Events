@@ -23,6 +23,8 @@ const Page = () => {
           ))}
         </ul>
       </div>
+
+    
     </section>
   );
 };
