@@ -51,8 +51,8 @@ const bookingSchema = new Schema<Booking, BookingModel>(
   { timestamps: true },
 );
 
-// Bookings are commonly looked up by event.
-bookingSchema.index({ eventId: 1 });
+// Enforce one booking per email and event; the index also supports event lookups.
+bookingSchema.index({ eventId: 1, email: 1 }, { unique: true });
 
 bookingSchema.pre("save", async function validateBookingForSave(
   this: BookingDocument,
