@@ -1,3 +1,5 @@
+import "server-only";
+
 import mongoose, { type Mongoose } from "mongoose";
 
 type MongooseCache = {
