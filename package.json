@@ -10,9 +10,15 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
+    "babel-plugin-react-compiler": "^1.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.23.0",
+<<<<<<< Updated upstream
+    "mongoose": "^9.7.4",
+=======
+    "mongoose": "^9.11.4",
+>>>>>>> Stashed changes
     "next": "16.2.9",
     "ogl": "^1.0.11",
     "react": "19.2.4",

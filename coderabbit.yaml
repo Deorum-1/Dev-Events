@@ -1,0 +1,72 @@
+# CodeRabbit configuration
+# Place this file in the ROOT of your repository (same level as README.md)
+# Full reference: https://docs.coderabbit.ai/reference/configuration
+
+language: "en-US"
+
+reviews:
+  # "assertive" = more thorough, flags more issues
+  # "chill" = lighter touch, focuses on higher-impact issues only
+  profile: "chill"
+
+  # If true, CodeRabbit will formally "request changes" on PRs with issues
+  # instead of just leaving comments. Turn on for stricter enforcement.
+  request_changes_workflow: false
+
+  # Adds a high-level plain-English summary of what the PR does
+  high_level_summary: true
+
+  # Adds a whimsical poem to the review — most teams turn this off
+  poem: false
+
+  # Shows a status check (pass/fail) on the PR based on the review
+  review_status: true
+
+  # Collapses the detailed walkthrough section by default (keeps PR tidy)
+  collapse_walkthrough: false
+
+  # Generates sequence diagrams for control flow changes where relevant
+  sequence_diagrams: true
+
+  # Auto-review settings
+  auto_review:
+    enabled: true          # Automatically review new PRs (no need to ask)
+    drafts: false          # Skip draft PRs until marked ready for review
+    base_branches:          # Only auto-review PRs targeting these branches
+      - main
+      - develop
+
+  # Path-specific instructions — great for steering focus by folder/language
+  path_instructions:
+    - path: "**/*.ts"
+      instructions: >
+        Pay close attention to type safety, unused variables,
+        and proper error handling in async functions.
+    - path: "**/*.py"
+      instructions: >
+        Flag missing type hints, unhandled exceptions, and
+        deviations from PEP 8 where they affect readability.
+    - path: "tests/**"
+      instructions: >
+        Focus on test coverage gaps and whether edge cases
+        are actually being tested, not just happy paths.
+
+  # Ignore noisy or irrelevant paths entirely
+  path_filters:
+    - "!**/*.lock"
+    - "!**/dist/**"
+    - "!**/node_modules/**"
+    - "!**/*.generated.*"
+
+chat:
+  # Allow CodeRabbit to respond when tagged (@coderabbitai) in PR comments
+  auto_reply: true
+
+# Optional: enable specific linters/tools CodeRabbit can run alongside its AI review
+# tools:
+#   ruff:
+#     enabled: true
+#   eslint:
+#     enabled: true
+#   markdownlint:
+#     enabled: true
